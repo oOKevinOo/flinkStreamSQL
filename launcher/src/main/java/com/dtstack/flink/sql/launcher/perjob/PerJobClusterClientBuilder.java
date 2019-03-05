@@ -21,7 +21,7 @@ package com.dtstack.flink.sql.launcher.perjob;
 import com.dtstack.flink.sql.launcher.YarnConfLoader;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.configuration.Configuration;
-import org.apache.flink.hadoop.shaded.com.google.common.base.Strings;
+import com.google.common.base.Strings;
 import org.apache.flink.yarn.AbstractYarnClusterDescriptor;
 import org.apache.flink.yarn.YarnClusterDescriptor;
 import org.apache.hadoop.fs.Path;
@@ -56,6 +56,7 @@ public class PerJobClusterClientBuilder {
         yarnConf = YarnConfLoader.getYarnConf(yarnConfDir);
         yarnClient = YarnClient.createYarnClient();
         yarnClient.init(yarnConf);
+
         yarnClient.start();
 
         System.out.println("----init yarn success ----");

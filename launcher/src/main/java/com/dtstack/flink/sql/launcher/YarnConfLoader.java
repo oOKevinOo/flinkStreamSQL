@@ -60,6 +60,7 @@ public class YarnConfLoader {
         }
 
         haYarnConf(yarnConf);
+//        confYarnHaProvider(yarnConf);
         return yarnConf;
     }
 
@@ -80,6 +81,10 @@ public class YarnConfLoader {
                 }
             }
         }
+        return yarnConf;
+    }
+    private static Configuration confYarnHaProvider(Configuration yarnConf) {
+        yarnConf.set("yarn.client.failover-proxy-provider","org.apache.hadoop.yarn.client.RequestHedgingRMFailoverProxyProvider");
         return yarnConf;
     }
 }

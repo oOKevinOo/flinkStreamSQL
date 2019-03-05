@@ -127,7 +127,6 @@ public class RdbAsyncReqRow extends AsyncReqRow {
                         }
                         rowList.add(row);
                     }
-
                     if (openCache()) {
                         putCache(key, CacheObj.buildCacheObj(ECacheContentType.MultiLine, cacheContent));
                     }

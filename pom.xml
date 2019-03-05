@@ -23,13 +23,17 @@
         <module>sqlserver</module>
         <module>oracle</module>
         <module>cassandra</module>
+        <module>kafka08</module>
+        <module>serversocket</module>
+        <module>console</module>
     </modules>
 
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <flink.version>1.5.4</flink.version>
-    </properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <flink.version>1.6.2</flink.version>
+      <hadoop.version>2.7.3.2.6.4.0-91</hadoop.version>
+  </properties>
 
     <build>
         <plugins>
@@ -43,4 +47,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <url>http://nexus-private.hortonworks.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
 </project>
